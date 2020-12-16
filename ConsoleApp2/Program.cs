@@ -21,7 +21,7 @@ namespace ConsoleApp2
             Assembly asmProg = Assembly.LoadFrom("C:/Users/MyHome/source/repos/ConsoleApp2/ConsoleApp2/Program.dll");
             Console.WriteLine(asm.FullName);
             Console.WriteLine(asmProg.FullName);
-           // Assembly asmLoad = Assembly.Load("Program, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9cef6fafa82c8137");
+            Assembly asmLoad = Assembly.Load("Program, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9cef6fafa82c8137");
             // получаем все типы из сборки MultiFileLibrary.dll
             Type[] types = asm.GetTypes();
             foreach (Type t in types)
@@ -35,7 +35,8 @@ namespace ConsoleApp2
             {
                 Console.WriteLine(t.Namespace);
             }
-            Console.WriteLine(asmProg.DefinedTypes); 
+            Console.WriteLine(asmProg.DefinedTypes);
+            Console.WriteLine(asmLoad.GetName().Name);
             Console.ReadLine();
         }
     }
